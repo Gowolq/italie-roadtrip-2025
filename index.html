@@ -28,10 +28,10 @@
   .hero-title { font-size: clamp(64px, 11vw, 108px); font-weight: 700; line-height: 1.0; letter-spacing: -0.04em; color: var(--text-primary); margin-bottom: 22px; opacity: 0; animation: fadeUp 0.8s ease 0.2s both; }
   .hero-title .gradient { background: linear-gradient(135deg, #2997ff 30%, #30d158); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic; padding-right: 0.12em; display: inline-block; }
   .hero-sub { font-size: 22px; font-weight: 300; color: var(--text-secondary); margin-bottom: 52px; opacity: 0; animation: fadeUp 0.8s ease 0.3s both; }
-  .stats { display: flex; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; margin-bottom: 44px; opacity: 0; animation: fadeUp 0.8s ease 0.4s both; }
-  .stat { background: var(--surface2); padding: 20px 32px; text-align: center; flex: 1; }
-  .stat-value { font-size: 20px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; }
-  .stat-label { font-size: 12px; color: var(--text-tertiary); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .stats { display: flex; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 22px; overflow: hidden; margin-bottom: 44px; opacity: 0; animation: fadeUp 0.8s ease 0.4s both; max-width: 920px; }
+  .stat { background: var(--surface2); padding: 20px 24px; text-align: center; flex: 1; }
+  .stat-value { font-size: 18px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.02em; white-space: nowrap; }
+  .stat-label { font-size: 11px; color: var(--text-tertiary); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
   .map-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent-blue); color: white; text-decoration: none; padding: 18px 38px; border-radius: 980px; font-size: 18px; font-weight: 500; transition: all 0.2s ease; opacity: 0; animation: fadeUp 0.8s ease 0.5s both; }
   .map-btn:hover { background: #0a84ff; transform: scale(1.03); box-shadow: 0 10px 36px rgba(41,151,255,0.4); }
   .map-btn svg { width: 20px; height: 20px; fill: white; }
@@ -51,7 +51,7 @@
   .chapter-heen .stop-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #2997ff, #5ac8fa); z-index: 1; }
   .chapter-daar .stop-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #ff9f0a, #ffd60a); z-index: 1; }
   .chapter-terug .stop-item::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #30d158, #34c759); z-index: 1; }
-  .stop-card { background: var(--surface2); padding: 22px 28px; display: grid; grid-template-columns: 90px 44px 1fr auto auto; align-items: center; gap: 18px; cursor: pointer; transition: background 0.15s ease; user-select: none; }
+  .stop-card { background: var(--surface2); padding: 22px 28px; display: grid; grid-template-columns: 130px 44px 1fr auto auto; align-items: center; gap: 18px; cursor: pointer; transition: background 0.15s ease; user-select: none; }
   .stop-card:hover { background: var(--surface3); }
   .stop-item.open .stop-card { background: var(--surface3); }
   .stop-chevron { width: 20px; height: 20px; flex-shrink: 0; transition: transform 0.3s ease; }
@@ -73,7 +73,7 @@
   .chapter-daar .stop-badge { background: rgba(255,159,10,0.12); color: #ffd60a; }
   .chapter-terug .stop-badge { background: rgba(48,209,88,0.12); color: #34c759; }
   .stop-detail { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); background: var(--surface3); }
-  .stop-item.open .stop-detail { max-height: 600px; }
+  .stop-item.open .stop-detail { max-height: 700px; }
   .stop-detail-inner { padding: 20px 28px 24px; border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 20px; }
   .detail-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
   .detail-value { font-size: 15px; color: var(--text-primary); line-height: 1.5; }
@@ -83,8 +83,14 @@
   .divider { border: none; height: 1px; background: linear-gradient(90deg,rgba(41,151,255,0.3),rgba(48,209,88,0.3)); }
   footer { text-align: center; padding: 48px 32px 72px; color: var(--text-tertiary); font-size: 14px; }
   @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
-  .stop-item:nth-child(1){animation-delay:.05s} .stop-item:nth-child(2){animation-delay:.10s} .stop-item:nth-child(3){animation-delay:.15s} .stop-item:nth-child(4){animation-delay:.20s} .stop-item:nth-child(5){animation-delay:.25s} .stop-item:nth-child(6){animation-delay:.30s} .stop-item:nth-child(7){animation-delay:.35s}
-  @media(max-width:640px){.stats{flex-wrap:wrap}.stat{flex:1 1 45%}.stop-card{grid-template-columns:64px 36px 1fr auto}.stop-badge{display:none}}
+  .stop-item:nth-child(1){animation-delay:.05s} .stop-item:nth-child(2){animation-delay:.10s} .stop-item:nth-child(3){animation-delay:.15s}
+  @media(max-width:640px){
+    .stats{flex-wrap:wrap}
+    .stat{flex:1 1 30%; padding: 16px 12px;}
+    .stat-value{font-size:15px}
+    .stop-card{grid-template-columns:90px 36px 1fr auto}
+    .stop-badge{display:none}
+  }
 </style>
 </head>
 <body>
@@ -93,27 +99,25 @@
   <symbol id="icon-car" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></symbol>
   <symbol id="icon-house" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></symbol>
   <symbol id="icon-swim" viewBox="0 0 24 24"><path d="M22 21c-1.11 0-1.73-.37-2.18-.64-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36-.46.27-1.07.64-2.18.64s-1.73-.37-2.18-.64c-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36-.46.27-1.08.64-2.19.64-1.11 0-1.73-.37-2.18-.64-.37-.22-.6-.36-1.15-.36-.56 0-.78.13-1.15.36C4.73 20.63 4.11 21 3 21v-2c.56 0 .78-.13 1.15-.36.46-.27 1.08-.64 2.19-.64 1.11 0 1.73.37 2.18.64.37.22.6.36 1.15.36.56 0 .78-.13 1.15-.36.46-.27 1.08-.64 2.19-.64 1.11 0 1.73.37 2.18.64.37.22.6.36 1.15.36.56 0 .78-.13 1.15-.36.46-.27 1.07-.64 2.18-.64s1.73.37 2.18.64c.37.22.6.36 1.15.36v2z"/></symbol>
-  <symbol id="icon-museum" viewBox="0 0 24 24"><path d="M22 11V9L12 2 2 9v2h2v9H2v2h20v-2h-2v-9h2zM11 20H7v-9h4v9zm6 0h-4v-9h4v9zm1-11H4.63L12 4.16 19.37 9H18z"/></symbol>
-  <symbol id="icon-waves" viewBox="0 0 24 24"><path d="M17 16.99c-1.35 0-2.2.42-2.95.8-.65.33-1.18.6-2.05.6-.87 0-1.4-.27-2.05-.6-.75-.38-1.6-.8-2.95-.8s-2.2.42-2.95.8c-.65.33-1.17.6-2.05.6v1.95c1.35 0 2.2-.42 2.95-.8.65-.33 1.17-.6 2.05-.6s1.4.27 2.05.6c.75.38 1.6.8 2.95.8s2.2-.42 2.95-.8c.65-.33 1.18-.6 2.05-.6.87 0 1.4.27 2.05.6.75.38 1.6.8 2.95.8v-1.95c-.87 0-1.4-.27-2.05-.6-.75-.38-1.6-.8-2.95-.8z"/></symbol>
-  <symbol id="icon-tent" viewBox="0 0 24 24"><path d="M22 9L12 2 2 9h3.18L12 4.44 18.82 9H22zm-10 5.5L7.36 21H4l8-10 8 10h-3.36L12 14.5z"/></symbol>
-  <symbol id="icon-mountain" viewBox="0 0 24 24"><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"/></symbol>
-  <symbol id="icon-city" viewBox="0 0 24 24"><path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5v-2h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></symbol>
+  <symbol id="icon-anchor" viewBox="0 0 24 24"><path d="M17 15l1.55 1.55c-.96 1.69-3.33 3.04-5.55 3.37V11h3V9h-3V7.82C14.16 7.4 15 6.3 15 5c0-1.65-1.35-3-3-3S9 3.35 9 5c0 1.3.84 2.4 2 2.82V9H8v2h3v8.92c-2.22-.33-4.59-1.68-5.55-3.37L7 15l-4-3v3c0 3.88 4.92 7 9 7s9-3.12 9-7v-3l-4 3zM12 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"/></symbol>
+  <symbol id="icon-tree" viewBox="0 0 24 24"><path d="M12 2L4 12h3v8h4v-4h2v4h4v-8h3L12 2z"/></symbol>
   <symbol id="icon-map" viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></symbol>
   <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></symbol>
 </svg>
 
 <div class="hero">
   <div class="hero-bg"></div>
-  <div class="eyebrow">Roadtrip · Mei–Juni 2026</div>
+  <div class="eyebrow">Roadtrip · Mei 2026</div>
   <h1 class="hero-title">La <span class="gradient">Dolce</span><br>Vita</h1>
-  <p class="hero-sub">Eindhoven → Italië en terug</p>
+  <p class="hero-sub">Eindhoven → Gardameer → Schwarzwald</p>
   <div class="stats">
     <div class="stat"><div class="stat-value">Za 16 mei</div><div class="stat-label">Vertrek</div></div>
-    <div class="stat"><div class="stat-value">23 dagen</div><div class="stat-label">Duur</div></div>
-    <div class="stat"><div class="stat-value">8 stops</div><div class="stat-label">Bestemmingen</div></div>
-    <div class="stat"><div class="stat-value">~3.000 km</div><div class="stat-label">Totaal</div></div>
+    <div class="stat"><div class="stat-value">Ma 25 mei</div><div class="stat-label">Terugkomst</div></div>
+    <div class="stat"><div class="stat-value">10 dagen</div><div class="stat-label">Duur</div></div>
+    <div class="stat"><div class="stat-value">4 stops</div><div class="stat-label">Bestemmingen</div></div>
+    <div class="stat"><div class="stat-value">~1.900 km</div><div class="stat-label">Totaal</div></div>
   </div>
-  <a class="map-btn" href="https://www.google.com/maps/dir/Eindhoven,+Nederland/Ottobeuren,+Duitsland/Tremosine+sul+Garda,+Italië/Verona,+Italië/Florence,+Italië/Cinque+Terre,+Italië/Pievepelago,+Italië/Achensee,+Oostenrijk/Salzburg,+Oostenrijk/Würzburg,+Duitsland/Eindhoven,+Nederland" target="_blank">
+  <a class="map-btn" href="https://www.google.com/maps/dir/Eindhoven,+Nederland/Lindau,+Duitsland/Tremosine+sul+Garda,+Italië/Gengenbach,+Duitsland/Eindhoven,+Nederland" target="_blank">
     <svg viewBox="0 0 24 24"><use href="#icon-map"/></svg>
     Open route in Google Maps
   </a>
@@ -123,35 +127,37 @@
   <div class="chapter-header">
     <div class="chapter-eyebrow">Deel 1</div>
     <h2 class="chapter-title">Reis heen</h2>
-    <p class="chapter-desc">Van Eindhoven door Duitsland naar het Gardameer — via het idyllische Allgäu.</p>
+    <p class="chapter-desc">Van Eindhoven via Lindau aan het Bodenmeer naar het Gardameer.</p>
   </div>
   <div class="stops">
     <div class="stop-item">
       <div class="stop-card" onclick="toggle(this)">
         <div class="stop-date">Za 16 mei</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-car"/></svg></div>
-        <div><div class="stop-name">Eindhoven → Ottobeuren</div><div class="stop-desc">Gasthof zum Mohren · Allgäu · ~550 km · ±5u 30m</div></div>
+        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"/></svg></div>
+        <div><div class="stop-name">Eindhoven → Lindau</div><div class="stop-desc">Eilandstad in het Bodenmeer · ~520 km · ±5u 30m</div></div>
         <div class="stop-badge">1 nacht</div>
         <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
       </div>
       <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Accommodatie</div><div class="detail-value"><a href="https://gasthof-mohren.de" target="_blank">Gasthof zum Mohren</a><br>Ottobeuren, Allgäu</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~550 km · ±5u 30m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Tank vol in Duitsland — goedkoper dan in Italië. Rij via A1 → A2 → A7.</div></div>
+        <div class="detail-block"><div class="detail-label">Locatie</div><div class="detail-value">Lindau im Bodensee · Beieren<br>Historisch eilandcentrum aan het Bodenmeer</div></div>
+        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~520 km · ±5u 30m rijden</div></div>
+        <div class="detail-block"><div class="detail-label">Eten &amp; drinken</div><div class="detail-value">Maximilianstraße — gezellige winkelstraat met terrassen<br>Zum Sünfzen · Gasthof Alte Post · Engelstube</div></div>
+        <div class="detail-block"><div class="detail-label">Parkeren</div><div class="detail-value">P5 Inselhalle of P3 op vasteland — loop over de brug naar het eiland</div></div>
+        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Borrel aan de haven met uitzicht op de Beierse leeuw, vuurtoren en Alpenpanorama.</div></div>
       </div></div>
     </div>
     <div class="stop-item">
       <div class="stop-card" onclick="toggle(this)">
         <div class="stop-date">Zo 17 mei</div>
         <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-car"/></svg></div>
-        <div><div class="stop-name">Ottobeuren → Gardameer</div><div class="stop-desc">Residence delle Rose · Laat aankomen bij Sonja · ~300 km · ±3u</div></div>
+        <div><div class="stop-name">Lindau → Gardameer</div><div class="stop-desc">Residence delle Rose · Aankomst bij Sonja · ~340 km · ±3u 30m</div></div>
         <div class="stop-badge">Aankomst</div>
         <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
       </div>
       <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Route</div><div class="detail-value">Ottobeuren → Kempten → Bregenz → Arlberg → Brenner → Gardameer</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~300 km · ±3u rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Let op</div><div class="detail-value">Brennerpas heeft tol. Laat aankomen — perfecte timing voor de zonsondergang over het meer.</div></div>
+        <div class="detail-block"><div class="detail-label">Route</div><div class="detail-value">Lindau → Bregenz → Arlberg → Brenner → Gardameer</div></div>
+        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~340 km · ±3u 30m rijden</div></div>
+        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Brennerpas heeft tol. Mooie alpenroute — goed voor een lunchstop in Innsbruck.</div></div>
       </div></div>
     </div>
   </div>
@@ -163,12 +169,12 @@
   <div class="chapter-header">
     <div class="chapter-eyebrow">Deel 2</div>
     <h2 class="chapter-title">Italië</h2>
-    <p class="chapter-desc">Van het Gardameer langs de mooiste plekken van Noord- en Midden-Italië naar de Apennijnen.</p>
+    <p class="chapter-desc">Een week ontspannen bij Sonja aan het Gardameer.</p>
   </div>
   <div class="stops">
     <div class="stop-item">
       <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">17–23 mei</div>
+        <div class="stop-date">zo 17 – za 23 mei</div>
         <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-swim"/></svg></div>
         <div><div class="stop-name">Gardameer — Sonja</div><div class="stop-desc">Residence delle Rose · Pieve di Tremosine · Zwembad &amp; wellness</div></div>
         <div class="stop-badge">6 nachten</div>
@@ -178,66 +184,8 @@
         <div class="detail-block"><div class="detail-label">Accommodatie</div><div class="detail-value"><a href="https://www.residencedellerose.it" target="_blank">Residence delle Rose</a><br>Pieve di Tremosine sul Garda</div></div>
         <div class="detail-block"><div class="detail-label">Faciliteiten</div><div class="detail-value">Zwembad · Wellness · Tennis &amp; Padel · Restaurant · Gym</div></div>
         <div class="detail-block"><div class="detail-label">Contact Sonja</div><div class="detail-value">+39 0365 953366</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Dagtrip naar Riva del Garda of Limone sul Garda — prachtige dorpjes aan het meer.</div></div>
-      </div></div>
-    </div>
-    <div class="stop-item">
-      <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">23–25 mei</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-museum"/></svg></div>
-        <div><div class="stop-name">Verona</div><div class="stop-desc">Arena di Verona · Romeo &amp; Julia · Piazza delle Erbe · ~45 km · ±1u</div></div>
-        <div class="stop-badge">2 nachten</div>
-        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
-      </div>
-      <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Must see</div><div class="detail-value">Arena di Verona · Casa di Giulietta · Piazza delle Erbe · Castelvecchio</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~45 km · ±1u rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Eten</div><div class="detail-value">Risotto all'Amarone is dé lokale specialiteit. Probeer Osteria del Duca.</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Parkeer buiten het centrum — ZTL-zone geeft hoge boetes. Gebruik Parking Arena.</div></div>
-      </div></div>
-    </div>
-    <div class="stop-item">
-      <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">25–27 mei</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-museum"/></svg></div>
-        <div><div class="stop-name">Florence</div><div class="stop-desc">Uffizi · Duomo · Ponte Vecchio · Opera Maggio Musicale · ~160 km · ±1u 45m</div></div>
-        <div class="stop-badge">2 nachten</div>
-        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
-      </div>
-      <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Must see</div><div class="detail-value">Uffizi (boek vooraf!) · Duomo · Ponte Vecchio · Piazzale Michelangelo</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~160 km · ±1u 45m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Opera</div><div class="detail-value"><a href="https://www.maggiofiorentino.com/en/events/un-ballo-in-maschera-2026" target="_blank">Un ballo in maschera · Verdi</a><br>Teatro del Maggio Musicale Fiorentino<br>Dir. Emmanuel Tjeknavorian</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Florence heeft een ZTL-zone. Parkeer bij Piazzale Michelangelo of een P+R buiten centrum.</div></div>
-      </div></div>
-    </div>
-    <div class="stop-item">
-      <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">27–29 mei</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-waves"/></svg></div>
-        <div><div class="stop-name">Cinque Terre</div><div class="stop-desc">Kleurrijke kustdorpjes · Wandelen langs zee · Zwemmen · ~120 km · ±1u 45m</div></div>
-        <div class="stop-badge">2 nachten</div>
-        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
-      </div>
-      <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">De 5 dorpjes</div><div class="detail-value">Monterosso · Vernazza · Corniglia · Manarola · Riomaggiore</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~120 km · ±1u 45m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Auto parkeren in La Spezia of Levanto. Neem de trein of boot tussen de dorpjes.</div></div>
-        <div class="detail-block"><div class="detail-label">Wandeling</div><div class="detail-value">Sentiero Azzurro verbindt alle 5 dorpjes. Cinque Terre Card €7,50/dag.</div></div>
-      </div></div>
-    </div>
-    <div class="stop-item">
-      <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">29 mei–2 jun</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-tent"/></svg></div>
-        <div><div class="stop-name">Pievepelago — Francesco &amp; Stefanie</div><div class="stop-desc">Campeggio Rio Verde · Apennijnen · ~180 km · ±2u 30m</div></div>
-        <div class="stop-badge">4 nachten</div>
-        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
-      </div>
-      <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Camping</div><div class="detail-value"><a href="http://www.camping-rioverde.it" target="_blank">Campeggio Rio Verde</a><br>Via M. di Canossa, Pievepelago · ⭐ 4.3</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~180 km · ±2u 30m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Omgeving</div><div class="detail-value">Regionaal Park Apennijnen van Modena · Lago Santo · Watervallen Sant'Annapelago</div></div>
+        <div class="detail-block"><div class="detail-label">Dagtrips</div><div class="detail-value">Riva del Garda · Limone sul Garda · Verona · Sirmione</div></div>
+        <div class="detail-block"><div class="detail-label">Bezoek</div><div class="detail-value">Francesco &amp; Stefanie misschien op bezoek vanuit Modena</div></div>
       </div></div>
     </div>
   </div>
@@ -249,71 +197,58 @@
   <div class="chapter-header">
     <div class="chapter-eyebrow">Deel 3</div>
     <h2 class="chapter-title">Reis terug</h2>
-    <p class="chapter-desc">Via de Oostenrijkse Alpen en Salzburg terug naar huis — een geheel andere route.</p>
+    <p class="chapter-desc">Via Lindau en het Zwarte Woud rustig terug — 2de pinksterdag thuis voor het avondeten.</p>
   </div>
   <div class="stops">
     <div class="stop-item">
       <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">2–4 jun</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-mountain"/></svg></div>
-        <div><div class="stop-name">Achensee — Tirol</div><div class="stop-desc">Mooiste bergmeer van Tirol · Alpenhotel · Wandelen · Zwemmen · ~280 km · ±3u 15m</div></div>
-        <div class="stop-badge">2 nachten</div>
-        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
-      </div>
-      <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Locatie</div><div class="detail-value">Achensee · Tirol · Oostenrijk<br>Kristalhelder bergmeer op 929m hoogte</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~280 km · ±3u 15m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Activiteiten</div><div class="detail-value">Zwemmen · Wandelen · Kayakken · Bergbaan Rofan · Panoramische fietsroutes</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Zoek een hotel direct aan het meer — Scholastika of Achensee-Ort zijn toplocaties.</div></div>
-      </div></div>
-    </div>
-    <div class="stop-item">
-      <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">4–6 jun</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-city"/></svg></div>
-        <div><div class="stop-name">Salzburg</div><div class="stop-desc">Mozart · Festung Hohensalzburg · Mirabellgarten · ~120 km · ±1u 30m</div></div>
-        <div class="stop-badge">2 nachten</div>
-        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
-      </div>
-      <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Must see</div><div class="detail-value">Festung Hohensalzburg · Mirabellgarten · Mozarts Geburtshaus · Altstadt (UNESCO)</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~120 km · ±1u 30m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Eten</div><div class="detail-value">Probeer Salzburger Nockerl. Café Tomaselli is het oudste koffiehuis van Oostenrijk.</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Parkeer bij P+R en neem de bus. De Salzburg Card geeft gratis toegang tot alle musea.</div></div>
-      </div></div>
-    </div>
-    <div class="stop-item">
-      <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">Za 6 jun</div>
-        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-city"/></svg></div>
-        <div><div class="stop-name">Würzburg</div><div class="stop-desc">Romantische wijnstad · Residenz (UNESCO) · Festung Marienberg · ~380 km · ±3u 45m</div></div>
+        <div class="stop-date">Za 23 mei</div>
+        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"/></svg></div>
+        <div><div class="stop-name">Gardameer → Lindau</div><div class="stop-desc">Lindau · Bodenmeer · ~340 km · ±3u 30m</div></div>
         <div class="stop-badge">1 nacht</div>
         <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
       </div>
       <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Must see</div><div class="detail-value">Residenz (UNESCO) · Festung Marienberg · Alte Mainbrücke · Altstadt</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~380 km · ±3u 45m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Wijn</div><div class="detail-value">Würzburg ligt in Franken — Silvaner is de lokale druif. Proef op de Alte Mainbrücke.</div></div>
+        <div class="detail-block"><div class="detail-label">Locatie</div><div class="detail-value">Lindau im Bodensee · zelfde plek als de heenweg</div></div>
+        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~340 km · ±3u 30m rijden</div></div>
+        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Vroeg vertrekken — pinksterweekend, drukte op Brennerautobahn. Vanaf 8:00 weg, dan voor de lunch in Lindau.</div></div>
       </div></div>
     </div>
     <div class="stop-item">
       <div class="stop-card" onclick="toggle(this)">
-        <div class="stop-date">Zo 7 jun</div>
+        <div class="stop-date">Zo 24 mei</div>
+        <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-tree"/></svg></div>
+        <div><div class="stop-name">Lindau → Gengenbach</div><div class="stop-desc">Vakwerkstadje in het Schwarzwald · ~260 km · ±3u</div></div>
+        <div class="stop-badge">1 nacht</div>
+        <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
+      </div>
+      <div class="stop-detail"><div class="stop-detail-inner">
+        <div class="detail-block"><div class="detail-label">Locatie</div><div class="detail-value">Gengenbach · Ortenau · Baden-Württemberg<br>Klein historisch vakwerkcentrum aan de rand van het Zwarte Woud</div></div>
+        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~260 km · ±3u rijden</div></div>
+        <div class="detail-block"><div class="detail-label">Hotel</div><div class="detail-value"><a href="https://www.die-reichsstadt.de" target="_blank">Hotel Die Reichsstadt</a><br>Boutique-hotel in het oude centrum, eigen restaurant</div></div>
+        <div class="detail-block"><div class="detail-label">Eten &amp; drinken</div><div class="detail-value">Restaurant Ponyhof · Die Reichsstadt · Lokale Pinot Noir &amp; Riesling uit de Ortenau</div></div>
+        <div class="detail-block"><div class="detail-label">Te doen</div><div class="detail-value">Wandeling door de Weinberge naar Bergle · Marktplatz met vakwerkhuizen · Kloster Gengenbach</div></div>
+        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Veel minder druk dan Triberg of Freiburg. Stadje wordt 's avonds rustig — perfect voor een terras na een lange dag.</div></div>
+      </div></div>
+    </div>
+    <div class="stop-item">
+      <div class="stop-card" onclick="toggle(this)">
+        <div class="stop-date">Ma 25 mei</div>
         <div class="stop-icon"><svg viewBox="0 0 24 24"><use href="#icon-house"/></svg></div>
-        <div><div class="stop-name">Würzburg → Eindhoven</div><div class="stop-desc">Thuis! · ~370 km · ±3u 30m</div></div>
+        <div><div class="stop-name">Gengenbach → Eindhoven</div><div class="stop-desc">2de Pinksterdag · Thuis! · ~530 km · ±5u 30m</div></div>
         <div class="stop-badge">Thuis!</div>
         <svg class="stop-chevron" viewBox="0 0 24 24"><use href="#icon-chevron"/></svg>
       </div>
       <div class="stop-detail"><div class="stop-detail-inner">
-        <div class="detail-block"><div class="detail-label">Route</div><div class="detail-value">Würzburg → Frankfurt → Köln → Eindhoven via A3/A61/A4</div></div>
-        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~370 km · ±3u 30m rijden</div></div>
-        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">Ontbijt rustig in Würzburg, vertrek rond 09:00 — dan ben je thuis voor de lunch!</div></div>
+        <div class="detail-block"><div class="detail-label">Route</div><div class="detail-value">Gengenbach → Karlsruhe → Frankfurt → Köln → Eindhoven via A5/A3/A4</div></div>
+        <div class="detail-block"><div class="detail-label">Afstand &amp; tijd</div><div class="detail-value">~530 km · ±5u 30m rijden</div></div>
+        <div class="detail-block"><div class="detail-label">Tip</div><div class="detail-value">2de Pinksterdag — vrachtwagenverbod in Duitsland, wel reisverkeer. Vroeg ontbijten, dan thuis voor het avondeten.</div></div>
       </div></div>
     </div>
   </div>
 </div>
 
-<footer>Buon viaggio! &nbsp;·&nbsp; Audi A6 55 TFSI e &nbsp;·&nbsp; Mei–Juni 2026</footer>
+<footer>Buon viaggio! &nbsp;·&nbsp; Audi A6 55 TFSI e &nbsp;·&nbsp; Mei 2026</footer>
 
 <script>
   function toggle(card) {
